@@ -150,7 +150,7 @@ class Scrapper:
                 driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
         obj = json.dumps(list(res))
-        with open(self.config.TWITTER_URLS_PATH, "w") as outfile:
+        with open(self.config.TWITTER_CRAWLED_URLS_PATH, "w") as outfile:
             outfile.write(obj)
         driver.quit()
 
@@ -163,7 +163,7 @@ class Scrapper:
             return "Scraping failed."
 
     def get_dataset(self):
-        URLS = json.load(open(self.config.TWITTER_URLS_PATH))
+        URLS = json.load(open(self.config.TWITTER_CRAWLED_URLS_PATH))
         tweets = []
 
         pbar = tqdm(
@@ -199,4 +199,4 @@ class Scrapper:
         tweets_dataset = pd.DataFrame(
             tweets, columns=["username", "name", "date", "url", "tweet"]
         )
-        tweets_dataset.to_excel(self.config.TWITTER_DATASET_PATH)
+        tweets_dataset.to_excel(self.config.TWITTER_CRAWLED_DATASET_PATH)
