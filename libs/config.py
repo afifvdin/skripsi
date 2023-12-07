@@ -7,8 +7,8 @@ class ScrapperConfig:
         self.SHORT_TIMEOUT = 1
         self.LONG_TIMEOUT = 30
 
-        self.TWITTER_URLS_PATH = "./dataset/twitter_urls.json"
-        self.TWITTER_DATASET_PATH = "./dataset/twitter_dataset.xlsx"
+        self.TWITTER_CRAWLED_URLS_PATH = "./dataset/twitter_crawled_urls.json"
+        self.TWITTER_CRAWLED_DATASET_PATH = "./dataset/twitter_crawled_dataset.xlsx"
 
         # Place your firefox profile path here so you can use your login cookie
         # you can do that via Help -> More Troubleshooting Information
